@@ -10,6 +10,7 @@ import coil3.request.ImageRequest
 import coil3.request.allowHardware
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.landwarderer.futon.core.util.ext.drawable
+import com.awxkee.jxlcoder.coil.JxlDecoder
 import javax.inject.Inject
 
 class CoilImageGetter @Inject constructor(
@@ -21,6 +22,9 @@ class CoilImageGetter @Inject constructor(
 	override fun getDrawable(source: String?): Drawable? {
 		return coil.executeBlocking(
 			ImageRequest.Builder(context)
+			    .components {
+                    add(JxlDecoder.Factory())
+                }
 				.data(source)
 				.allowHardware(false)
 				.build(),

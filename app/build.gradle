@@ -197,6 +197,7 @@ dependencies {
 	implementation libs.coil.network
 	implementation libs.coil.gif
 	implementation libs.coil.svg
+    implementation libs.coil.jpegxl
 	implementation libs.avif.decoder
 	implementation libs.ssiv
 	implementation libs.disk.lru.cache
